@@ -3,11 +3,19 @@ package com.excercise;
 
 import java.math.BigDecimal;
 
+/**
+ * main class which computes the cost of items
+ */
 public class PriceCalculator {
 
+    /**
+     * calculate the total cost of passed in items
+     * @param items
+     * @return BigDecimal cost of items
+     */
     public BigDecimal calculate(Item[] items) {
         if(items == null)
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("items should not be null");
 
         BigDecimal cost = BigDecimal.ZERO;
         CalculateVisitor visitor = new CalculateVisitorImpl();
